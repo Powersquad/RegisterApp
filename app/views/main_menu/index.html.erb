@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Register Main Menu</title>
+</head>
+<body>
+    <div class="header">
+        <h1 class="primary-message">Main Menu</h1>
+    <div>
+
+    <div id="main" class="main">
+
+        <button type="button" class="action" action="../layouts" id="startTrans">Start Transaction</button>
+
+        <%= button_to '/productListing', class: 'button', :method => "get" do %>View Products<% end %>
+        <div>
+                <% if current_employee.isElevatedUser == true %>
+                     <%= button_to 'employee', class: 'button', :method => "get" do %>Create Employee<% end %>
+                    <button type="button" class="action" id="salesReport">Sales Report</button>
+                    <button type="button" class="action" id="cashierReport">Cashier Report</button>
+                <% end %>
+        </div>
+
+        </button>
+    </div>
+    <%= yield %>
+</body>
+</html>
